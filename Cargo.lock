@@ -3,7 +3,7 @@
 version = 4
 
 [[package]]
-name = "layout_lib"
+name = "keyboard-layout-lib"
 version = "0.1.0"
 dependencies = [
  "quick-xml",

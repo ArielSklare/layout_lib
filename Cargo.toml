@@ -1,5 +1,5 @@
 [package]
-name = "layout_lib"
+name = "keyboard-layout-lib"
 version = "0.1.0"
 edition = "2024"
 description = "Cross-platform keyboard layout utilities"
