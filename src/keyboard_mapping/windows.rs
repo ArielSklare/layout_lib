@@ -91,7 +91,7 @@ pub fn get_layout(index: usize) -> Option<KeyboardLayout> {
 pub fn list_layouts() -> Vec<KeyboardLayout> {
     let hkls = enumerate_hkls();
     hkls.into_iter()
-        .map(|(h)| keyboard_layout_from_hkl(h))
+        .map(keyboard_layout_from_hkl)
         .collect()
 }
 
@@ -103,7 +103,7 @@ pub fn vk_to_char_map_for_layout(hkl: HKL) -> LayoutMap {
         let state = [0u8; 256];
         let mut buf = [0u16; 8];
         for vk in 0u16..=255u16 {
-            let sc = MapVirtualKeyExW(vk as u32, MAPVK_VK_TO_VSC_EX, Some(hkl)) as u32;
+            let sc = MapVirtualKeyExW(vk as u32, MAPVK_VK_TO_VSC_EX, Some(hkl));
             if sc == 0 {
                 continue;
             }
