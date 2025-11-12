@@ -90,9 +90,7 @@ pub fn get_layout(index: usize) -> Option<KeyboardLayout> {
 
 pub fn list_layouts() -> Vec<KeyboardLayout> {
     let hkls = enumerate_hkls();
-    hkls.into_iter()
-        .map(keyboard_layout_from_hkl)
-        .collect()
+    hkls.into_iter().map(keyboard_layout_from_hkl).collect()
 }
 
 pub fn vk_to_char_map_for_layout(hkl: HKL) -> LayoutMap {
