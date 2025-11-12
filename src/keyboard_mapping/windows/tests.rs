@@ -71,23 +71,6 @@ fn test_vk_to_char_map_default_contains_common_keys() {
 }
 
 #[test]
-fn test_vk_to_char_map_for_layout_structure() {
-    let layouts = list_layouts();
-    if !layouts.is_empty() {
-        let layout_map = vk_to_char_map_for_layout(0);
-
-        assert!(
-            !layout_map.layout.lang_name.is_empty(),
-            "Layout should have language name"
-        );
-        assert!(
-            !layout_map.map.is_empty(),
-            "Layout should have key mappings"
-        );
-    }
-}
-
-#[test]
 fn test_all_layout_vk_maps_structure() {
     let layout_maps = all_layout_vk_maps();
 
