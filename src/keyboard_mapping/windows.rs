@@ -123,9 +123,7 @@ pub fn vk_to_char_map_default() -> LayoutMap {
 
 pub fn all_layout_vk_maps() -> Vec<LayoutMap> {
     let hkls = enumerate_hkls();
-    hkls.into_iter()
-        .map(|hkl| vk_to_char_map_for_layout(hkl))
-        .collect()
+    hkls.into_iter().map(vk_to_char_map_for_layout).collect()
 }
 
 #[cfg(all(test, target_os = "windows"))]
